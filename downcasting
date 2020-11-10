@@ -1,0 +1,57 @@
+class citizen {
+	
+	String value = "indian" ;
+	
+	/*int pincode = 00000;
+	final int pinCode = 600064;*/
+	void nation() {
+		System.out.println("your nationality is "+ value);
+	}
+	final void constituency() {
+		
+		String constitu = "Tambaram";
+		System.out.println(constitu);
+	}
+	public void eligible() {
+		if(value=="indian") {
+			String s1= "Yes i am indian";
+			System.out.println(s1);
+		}else
+		{
+			String s2 = "No i am not a indian ";
+			System.out.println(s2);
+		}
+	}
+}
+class age extends citizen  {
+	
+	 int age = 54;
+	void ageDetail() {
+	System.out.println("your age is "+ age);
+	}
+	public void eligible() {
+	if(age>=18) {
+		
+		String s1 = "Yes i can vote";
+		System.out.println(s1);
+	}else
+	{
+		String s2= "No i cant vote";
+		System.out.println(s2);
+	}
+}
+public class vote {
+	
+	public static void main(String[] args) {
+
+System.out.println("downcasting");
+		citizen c1 = new age();
+		if (c1 instanceof age) {
+		    age a1 = (age) c1;
+		    a1.ageDetail();
+		    a1.eligible();
+		    a1.nation();
+		    c1.eligible();
+		} 
+		}
+    }
